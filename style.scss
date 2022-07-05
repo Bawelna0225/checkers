@@ -1,0 +1,121 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	.overlay {
+		display: flex;
+		visibility: hidden;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.75);
+		.game-over {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			text-align: center;
+			font-size: 10vw;
+			color: wheat;
+			button {
+				padding: 10px 20px;
+			}
+		}
+	}
+	.board {
+		margin: 0;
+		display: grid;
+		grid-template-rows: repeat(8, 65px);
+		box-shadow: 0px 0px 10px rgba(16, 15, 15, 0.71);
+		border-radius: 5px;
+		overflow: hidden;
+		.row {
+			display: grid;
+			grid-template-columns: repeat(8, 65px);
+			.emptySpace {
+				background-color: #f7d5b3 !important;
+			}
+			.boardSquare {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: #85511c;
+				width: 65px !important;
+				height: 65px !important;
+				.king.red-piece {
+					background-color: rgb(130, 20, 20);
+				}
+
+				.king.black-piece {
+					background-color: rgb(95, 95, 95);
+				}
+				.black-piece {
+					width: 40px;
+					height: 40px;
+					padding: 12px;
+					background-color: black;
+					box-shadow: 0px 0px 10px rgba(16, 15, 15, 0.71);
+					border-radius: 50px;
+					cursor: pointer;
+					user-select: none;
+				}
+				.red-piece {
+					box-shadow: 0px 0px 10px rgba(16, 15, 15, 0.71);
+					width: 40px;
+					height: 40px;
+					padding: 12px;
+					background-color: red;
+					border-radius: 50px;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	.turn {
+		position: absolute;
+		top: 30px;
+		font-size: 5rem;
+		text-transform: uppercase;
+	}
+}
+
+@media screen and (max-width: 560px) {
+	.container {
+		.board {
+			grid-template-rows: repeat(8, 12vw);
+			.row {
+				grid-template-columns: repeat(8, 12vw);
+				.boardSquare {
+                    width: 12vw !important;
+                    height: 12vw !important;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+					.red-piece {
+						height: 4.5vw;
+						width: 4.5vw;
+					}
+					.black-piece {
+						height: 4.5vw;
+						width: 4.5vw;
+					}
+				}
+			}
+		}
+	}
+}
