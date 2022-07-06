@@ -50,13 +50,13 @@
   grid-template-columns: repeat(8, 65px);
 }
 .container .board .row .emptySpace {
-  background-color: #f7d5b3 !important;
+  background-image: linear-gradient(to right top, #ffdfc0, #ffddbc, #ffdbb7, #ffd9b3, #ffd7af) !important;
 }
 .container .board .row .boardSquare {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #85511c;
+  background-image: linear-gradient(to right top, #5d3c1c, #5e3b19, #5e3a16, #5f3913, #5f3810);
   width: 65px !important;
   height: 65px !important;
 }
@@ -90,9 +90,15 @@
 }
 .container .turn {
   position: absolute;
-  top: 30px;
+  top: 0px;
   font-size: 5rem;
   text-transform: uppercase;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: -1;
 }
 
 @media screen and (max-width: 560px) {
@@ -116,5 +122,8 @@
   .container .board .row .boardSquare .black-piece {
     height: 4.5vw;
     width: 4.5vw;
+  }
+  .container .turn {
+    font-size: 3rem;
   }
 }/*# sourceMappingURL=style.css.map */
